@@ -36,7 +36,7 @@ module.exports = {
 **app.js**
 
 ```js
-const procurator = require('./index');
+const procurator = require('procurator');
 const fs         = require('fs');
 
 let readStream  = fs.createReadStream('./some.template.js');
