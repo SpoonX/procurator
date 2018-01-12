@@ -22,7 +22,5 @@
     "url": "https://github.com/SpoonX/procurator/issues"
   },
   "homepage": "https://github.com/SpoonX/procurator#readme",
-  "dependencies": {
-    "stream-replace": "^1.0.0"
-  }
+  "dependencies": {}
 }
