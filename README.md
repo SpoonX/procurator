@@ -6,7 +6,8 @@ This module has few features.
 
 * Simple variables
 * Defaults for variables
-* Support for nested variables (recursive)
+* Support for nested placeholders (recursive)
+* Support for nested variables (Using [homefront](https://github.com/SpoonX/homefront))
 
 ## Installation
 
@@ -36,6 +37,9 @@ module.exports = {
 
   // Let's use double quotes
   empire: '{{ baz:"I haz one" }}',
+
+  // Whaaaaaat, nested keys!?
+  username: '{{ user.name:"Guest" }}',
 };
 ```
 
@@ -47,7 +51,7 @@ const fs         = require('fs');
 
 let readStream  = fs.createReadStream('./some.template.js');
 let writeStream = fs.createWriteStream('./out-file.js');
-let parameters  = {foo: 'Batman', bat: 'is holy'};
+let parameters  = {foo: 'Batman', bat: 'is holy', user: {name: 'Swag-meister'}};
 let recursive   = true; // New: replace more than once to allow for nested variables
 let limit       = 100; // New: the maximum replacement depth. Throws an Error when reached.
 
@@ -92,9 +96,9 @@ console.log(procurator.sync(target, {addressed: 'developer'}, recursive, limit))
 // Outputs: Hello developer! How are you doing today?
 ```
 
-### Nested variables
+### Nested placeholders
 
-As of v2.0.0, Procurator supports nested variables.
+As of v2.0.0, Procurator supports nested placeholders.
 This means you can do the following (using sync for simplicity):
 
 ```js
