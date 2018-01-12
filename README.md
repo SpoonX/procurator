@@ -1,4 +1,5 @@
 # procurator
+
 A tiny, super fast, stream based replacement template engine.
 
 This module has few features.
@@ -7,12 +8,14 @@ This module has few features.
 * Defaults for variables
 
 ## Installation
+
 Simply use your package manager of choice.
 
 * `npm i --save procurator`
 * `yarn add procurator`
 
 ## Usage
+
 Code speaks. Let's do this.
 
 **some.template.js**
@@ -66,5 +69,20 @@ module.exports = {
 
 _**Note**: The file extension doesn't matter. I used .js but it can be anything._
 
+### Sync
+
+Sometimes you just want to apply replaces in memory.
+For that purpose, a memory and code-size efficient method has been added.
+
+```js
+const procurator = require('procurator');
+const target     = 'Hello {{addressed: "world"}}! How are you doing {{ when: "today"}}?';
+
+console.log(procurator.sync(target, {addressed: 'developer'}));
+
+// Outputs: Hello developer! How are you doing today?
+```
+
 ## License
+
 MIT
