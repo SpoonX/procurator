@@ -17,7 +17,7 @@ Simply use your package manager of choice.
 
 ## Usage
 
-`procurator(parameters[, recursive, limit])`
+`procurator(parameters[, recursive = true, limit = 100])`
 
 Code speaks. Let's do this.
 
@@ -76,7 +76,7 @@ _**Note**: The file extension doesn't matter. I used .js but it can be anything.
 
 ### Sync
 
-`procurator(target, parameters[, recursive, limit])`
+`procurator(target, parameters[, recursive = `true, limit = 100])`
 
 Sometimes you just want to apply replaces in memory.
 For that purpose, a memory and code-size efficient method has been added.
