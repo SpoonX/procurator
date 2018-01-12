@@ -1,3 +1,13 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/SpoonX/procurator/compare/v2.0.0...v2.1.0) (2018-01-12)
+
+
+### Features
+
+* **project:** add support for nested variables (dot separator) ([2812917](https://github.com/SpoonX/procurator/commit/2812917))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/SpoonX/procurator/compare/v1.1.0...v2.0.0) (2018-01-12)
 
