@@ -1,3 +1,13 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/SpoonX/procurator/compare/v2.1.0...v2.2.0) (2018-01-26)
+
+
+### Bug Fixes
+
+* **replace:** be more permissive with default values ([a2f8fcd](https://github.com/SpoonX/procurator/commit/a2f8fcd))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/SpoonX/procurator/compare/v2.0.0...v2.1.0) (2018-01-12)
 
