@@ -1,3 +1,14 @@
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/SpoonX/procurator/compare/v3.0.0...v3.0.1) (2018-10-17)
+
+
+### Features
+
+* **project:** add createStreamTransform and improve performance 500% ([434184e](https://github.com/SpoonX/procurator/commit/434184e))
+* **project:** add linting ([4e6fa11](https://github.com/SpoonX/procurator/commit/4e6fa11))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/SpoonX/procurator/compare/v2.2.0...v3.0.0) (2018-10-17)
 
