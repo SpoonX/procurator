@@ -2,7 +2,7 @@
   "name": "procurator",
   "version": "2.2.0",
   "description": "A tiny, stream based replacement template engine.",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "dev": "tsc --build -w tsconfig.json",
