@@ -3,7 +3,8 @@
   "version": "2.2.0",
   "description": "A tiny, stream based replacement template engine.",
   "main": "./dist/index.js",
-  "files": ["./dist/**/*"],
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "dev": "tsc --build -w tsconfig.json",
