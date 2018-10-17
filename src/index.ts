@@ -1,5 +1,6 @@
-import { stream } from  './lib/stream';
-import { replace } from './lib/replace';
+import { stream } from './lib/stream';
+export * from './lib/stream';
+export * from './lib/replace';
+export * from './lib/createReplaceTransform';
 
-module.exports = stream;
-module.exports.sync = replace;
+export default stream;
