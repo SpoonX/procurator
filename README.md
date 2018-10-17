@@ -1,6 +1,6 @@
 # procurator
 
-A tiny, super fast, stream based replacement template engine. **Now recursive! (keep reading to learn what that means)**
+A tiny, super fast, stream based replacement template engine written in typescript. **Now recursive! (keep reading to learn what that means)**
 
 This module has few features.
 
@@ -36,7 +36,10 @@ module.exports = {
   bacon: '{{ bat : ' holds the truth ' }}',
 
   // Let's use double quotes
-  empire: '{{ baz:"I haz one" }}',
+  empire: '{{ baz:"I haz's one" }}',
+
+  // Let's default to an empty string
+  hello: '{{ foo: }}',
 
   // Whaaaaaat, nested keys!?
   username: '{{ user.name:"Guest" }}',
@@ -46,7 +49,7 @@ module.exports = {
 **app.js**
 
 ```js
-const procurator = require('procurator');
+const { stream } = require('procurator');
 const fs         = require('fs');
 
 let readStream  = fs.createReadStream('./some.template.js');
@@ -55,7 +58,7 @@ let parameters  = {foo: 'Batman', bat: 'is holy', user: {name: 'Swag-meister'}};
 let recursive   = true; // New: replace more than once to allow for nested variables
 let limit       = 100; // New: the maximum replacement depth. Throws an Error when reached.
 
-readStream.pipe(procurator(parameters, recursive, limit)).pipe(writeStream);
+readStream.pipe(stream(parameters, recursive, limit)).pipe(writeStream);
 ```
 
 **Produces ./out-file.js:**
@@ -91,7 +94,7 @@ const target     = 'Hello {{addressed: "world"}}! How are you doing {{ when: "to
 const recursive  = true; // New: replace more than once to allow for nested variables
 const limit      = 100; // New: the maximum replacement depth. Throws an Error when reached.
 
-console.log(procurator.sync(target, {addressed: 'developer'}, recursive, limit));
+console.log(procurator.replace(target, {addressed: 'developer'}, recursive, limit));
 
 // Outputs: Hello developer! How are you doing today?
 ```
@@ -107,7 +110,7 @@ const target     = 'Hello {{addressed: "{{title: "Mr."}} world"}}! How are you d
 const recursive  = true; // New: replace more than once to allow for nested variables
 const limit      = 100; // New: the maximum replacement depth. Throws an Error when reached.
 
-console.log(procurator.sync(target, {title: 'Mrs.'}, recursive, limit));
+console.log(procurator.replace(target, {title: 'Mrs.'}, recursive, limit));
 
 // Outputs: Hello Mrs. world! How are you doing today?
 ```
