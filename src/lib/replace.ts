@@ -1,6 +1,6 @@
 import { Homefront } from 'homefront';
 
-export const replace = (target: string, parameters: { [key: string]: any }, recursive: boolean = true, limit: number = 100) => {
+export const replace = (target: string, parameters: { [key: string]: any }, recursive: boolean = true, limit: number = 100): string => {
   let replaceCount = 0;
   const params     = new Homefront(parameters);
   const exp        = /{{\s?([\w.]+)(?:(?:\s?:\s?)(?:(?:['"]?)(.*?)(?:['"]?)))?\s?}}/g;
