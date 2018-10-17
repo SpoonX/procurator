@@ -36,7 +36,7 @@ module.exports = {
   bacon: '{{ bat : ' holds the truth ' }}',
 
   // Let's use double quotes
-  empire: '{{ baz:"I haz's one" }}',
+  empire: '{{ baz:"I haz\'s one" }}',
 
   // Let's default to an empty string
   hello: '{{ foo: }}',
