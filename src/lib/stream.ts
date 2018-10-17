@@ -2,7 +2,7 @@ import { StringDecoder } from 'string_decoder';
 import { Transform } from 'stream';
 import { replace } from './replace';
 
-export const stream = (parameters: { [key: string]: any }, recursive: boolean, limit: number): Transform => {
+export const stream = (parameters: { [key: string]: any }, recursive?: boolean, limit?: number): Transform => {
   const decoder = new StringDecoder('utf8');
   let last = '';
 
