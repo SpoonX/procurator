@@ -1,8 +1,8 @@
-const {StringDecoder} = require('string_decoder');
-const {Transform}     = require('stream');
-const replace         = require('./replace');
+import { StringDecoder } from 'string_decoder';
+import { Transform } from 'stream';
+import { replace } from './replace';
 
-module.exports = (parameters, recursive, limit) => {
+export const stream = (parameters: { [key: string]: any }, recursive: boolean, limit: number): Transform => {
   const decoder = new StringDecoder('utf8');
 
   return new Transform({
