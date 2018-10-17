@@ -3,7 +3,7 @@ import { Homefront } from 'homefront';
 export const replace = (target: string, parameters: { [key: string]: any }, recursive: boolean = true, limit: number = 100) => {
   let replaceCount = 0;
   const params     = new Homefront(parameters);
-  const exp        = /{{\s?([\w-.]+?)(?:\s*:\s*(?:['"])?(.+?)(?:['"])?)?\s?}}/g;
+  const exp        = /{{\s?([\w.]+)(?:(?:\s?:\s?)(?:(?:['"]?)(.*?)(?:['"]?)))?\s?}}/g;
   const replacer   = (match: string, parameter: string, defaultValue: string) => {
     return params.fetch(parameter, (typeof defaultValue === 'string') ? defaultValue : match);
   };
