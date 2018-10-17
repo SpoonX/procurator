@@ -4,16 +4,17 @@ import { replace } from './replace';
 
 export const stream = (parameters: { [key: string]: any }, recursive: boolean, limit: number): Transform => {
   const decoder = new StringDecoder('utf8');
+  let last = '';
 
   return new Transform({
     transform(chunk, encoding, callback) {
-      if (this._last === undefined) {
-        this._last = '';
+      if (last === undefined) {
+        last = '';
       }
 
-      this._last += decoder.write(chunk);
-      let list   = this._last.split(/\n/);
-      this._last = list.pop();
+      last += decoder.write(chunk);
+      let list   = last.split(/\n/);
+      last = list.pop();
 
       for (let i = 0; i < list.length; i++) {
         if (typeof list[i] !== 'string') {
@@ -27,9 +28,9 @@ export const stream = (parameters: { [key: string]: any }, recursive: boolean, l
     },
 
     flush(callback) {
-      this._last += decoder.end();
+      last += decoder.end();
 
-      this._last && this.push(replace(this._last, parameters, recursive, limit));
+      last && this.push(replace(last, parameters, recursive, limit));
 
       callback();
     }
