@@ -1,7 +1,7 @@
 import { StringDecoder } from 'string_decoder';
 import { Transform } from 'stream';
 
-export const createReplaceTransform = (transformer: (data: string) => string) => {
+export const createTransform = (transformer: (data: string) => string) => {
   const decoder = new StringDecoder('utf8');
 
   return new Transform({

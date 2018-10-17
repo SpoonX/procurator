@@ -1,7 +1,7 @@
 import { Transform } from 'stream';
 import { replace } from './replace';
-import { createReplaceTransform } from './createReplaceTransform';
+import { createTransform } from './createTransform';
 
 export const stream = (parameters: { [key: string]: any }, recursive?: boolean, limit?: number): Transform => {
-  return createReplaceTransform(chunk => replace(chunk, parameters, recursive, limit));
+  return createTransform(chunk => replace(chunk, parameters, recursive, limit));
 };
