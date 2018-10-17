@@ -1,10 +1,10 @@
-const {Homefront} = require('homefront');
+import { Homefront } from 'homefront';
 
-module.exports = (target, parameters, recursive = true, limit = 100) => {
+export const replace = (target: string, parameters: { [key: string]: any }, recursive: boolean = true, limit: number = 100): string => {
   let replaceCount = 0;
   const params     = new Homefront(parameters);
-  const exp        = /{{\s?([\w-.]+?)(?:\s*:\s*(?:['"])?(.+?)(?:['"])?)?\s?}}/g;
-  const replacer   = (match, parameter, defaultValue) => {
+  const exp        = /{{\s?([\w.]+)(?:(?:\s?:\s?)(?:(?:['"]?)(.*?)(?:['"]?)))?\s?}}/g;
+  const replacer   = (match: string, parameter: string, defaultValue: string) => {
     return params.fetch(parameter, (typeof defaultValue === 'string') ? defaultValue : match);
   };
 
