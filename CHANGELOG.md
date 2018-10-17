@@ -1,3 +1,20 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/SpoonX/procurator/compare/v2.2.0...v3.0.0) (2018-10-17)
+
+
+### Bug Fixes
+
+* **package.json:** fix entry point ([871980e](https://github.com/SpoonX/procurator/commit/871980e))
+* **stream:** use variable instead of private property ([0842dd6](https://github.com/SpoonX/procurator/commit/0842dd6))
+
+
+### Features
+
+* **project:** rewrite files in typescript ([5efc9d9](https://github.com/SpoonX/procurator/commit/5efc9d9))
+* **replace:** update replace regex ([aa5eebb](https://github.com/SpoonX/procurator/commit/aa5eebb))
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/SpoonX/procurator/compare/v2.1.0...v2.2.0) (2018-01-26)
 

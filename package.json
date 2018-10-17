@@ -1,6 +1,6 @@
 {
   "name": "procurator",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A tiny, stream based replacement template engine.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
